@@ -8,7 +8,7 @@
 import XCTest
 @testable import UTtest //テストするディレクトリー staticからinternalまでいける　privateは無理
 
-class UTtestTests: XCTestCase {
+final class UTtestTests: XCTestCase {
     
     //融点をテストする
     func testWatherMeltingPoint(){
@@ -16,7 +16,7 @@ class UTtestTests: XCTestCase {
         let temperature = Temperature(celsius: 0)
         //第一、第二がイコールの時に成功
         XCTAssertEqual(temperature.celsius,0)
-    
+        
         XCTAssertEqual(temperature.faherneit, 32)
         XCTAssertEqual(temperature.test, "aaa")
         XCTAssertEqual(Temperature.teststatic, "static")
@@ -28,9 +28,9 @@ class UTtestTests: XCTestCase {
         let temperature = Temperature(celsius: 100)
         
         XCTAssertEqual(temperature.celsius,100)
-    
+        
         XCTAssertEqual(temperature.faherneit, 212)
-    
+        
     }
     //単一
     func testSingleExpression() {
@@ -49,12 +49,22 @@ class UTtestTests: XCTestCase {
         //nilじゃなかったら成功
         XCTAssertNotNil(nilValue)
         
+        nilValue = 1
+        
+        //特定のパスを取らない事を保証する
+        guard let value = nilValue else  {
+            //ここに入ってしまった場合はテスト失敗
+            XCTFail()
+            return
+        }
+        print(value)
+        
     }
     //二つの式を比較
     func testTwoExpression(){
         //それぞれの引数が等しい場合
         XCTAssertEqual(1, 1)
-       //$1 < $2　の場合成功
+        //$1 < $2　の場合成功
         XCTAssertLessThan(4, 100)
         //$1 <= $2 の場合成功
         XCTAssertLessThanOrEqual(4, 4)
@@ -64,6 +74,16 @@ class UTtestTests: XCTestCase {
         // $1 >= $2 の場合成功
         XCTAssertGreaterThanOrEqual("aaa", "a")
         XCTAssertGreaterThanOrEqual("aaa", "aaa")
+        
+        //エラーの有無を判断するアサーション
+        let throwError = ThrowError()
+        //Throwできたら成功　エラーが発生　テスト成功
+        XCTAssertThrowsError(try throwError.throwableFunc(throwsError: true) )
+        //Throwできなかったら成功　エラー失敗　テスト成功
+        XCTAssertNoThrow(try throwError.throwableFunc(throwsError: false))
+        
     }
+    
+    
 }
 

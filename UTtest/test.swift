@@ -8,7 +8,9 @@
 import Foundation
 
 //@testable import UTtest //internalまでなら使える
- 
+
+
+
 struct Temperature: Equatable {
     
     public var celsius: Double
@@ -23,8 +25,30 @@ struct Temperature: Equatable {
     
     internal var test: String = "aaa"
     internal var test1: String = "bbbb"
-
+    
     private var testprivate: String = "avbc"
     
     static let teststatic: String = "static"
+    
+    
+    
+}
+//errorの構造体
+struct errorType:Error {
+    
+}
+
+//errorを発生させる処理
+
+public struct ThrowError {
+    
+    func throwableFunc(throwsError: Bool) throws {
+        
+        if throwsError {
+            
+            throw errorType()
+            
+        }
+    }
+    
 }
