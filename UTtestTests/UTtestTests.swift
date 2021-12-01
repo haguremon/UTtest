@@ -82,8 +82,19 @@ final class UTtestTests: XCTestCase {
         //Throwできなかったら成功　エラー失敗　テスト成功
         XCTAssertNoThrow(try throwError.throwableFunc(throwsError: false))
         
+        //無条件に失敗するアサーション
+        var optionalIntValue: Int? = nil
+       // optionalIntValue = 1
+        guard let value = optionalIntValue else {
+            XCTFail() //ここのパスを通ってしまった場合テスト失敗
+            return
+        }
+        
+        print(value)
+
+        
     }
     
-    
+
 }
 
