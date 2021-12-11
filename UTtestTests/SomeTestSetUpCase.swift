@@ -11,7 +11,7 @@ import XCTest
 
 //事前処理
 final class SomeTestSetUpCase: XCTestCase {
-
+//一番最初に呼ばれる
     override class func setUp() {
         super.setUp()
         print("テストケース全体の事前処理で一度だけしか行われない")

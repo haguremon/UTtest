@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CF863459275720B7005AFB04 /* SomeTestSetUpCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF863458275720B7005AFB04 /* SomeTestSetUpCase.swift */; };
+		CF86347F27646FD1005AFB04 /* SomeTestTearDownCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF86347E27646FD1005AFB04 /* SomeTestTearDownCase.swift */; };
 		CFB3BB7526E1DD6F00EB2B1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB3BB7426E1DD6F00EB2B1A /* AppDelegate.swift */; };
 		CFB3BB7726E1DD6F00EB2B1A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB3BB7626E1DD6F00EB2B1A /* SceneDelegate.swift */; };
 		CFB3BB7926E1DD6F00EB2B1A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB3BB7826E1DD6F00EB2B1A /* ViewController.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		CF863458275720B7005AFB04 /* SomeTestSetUpCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeTestSetUpCase.swift; sourceTree = "<group>"; };
+		CF86347E27646FD1005AFB04 /* SomeTestTearDownCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeTestTearDownCase.swift; sourceTree = "<group>"; };
 		CFB3BB7126E1DD6F00EB2B1A /* UTtest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UTtest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFB3BB7426E1DD6F00EB2B1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFB3BB7626E1DD6F00EB2B1A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				CFB3BB8B26E1DD7100EB2B1A /* UTtestTests.swift */,
 				CF863458275720B7005AFB04 /* SomeTestSetUpCase.swift */,
 				CFB3BB8D26E1DD7100EB2B1A /* Info.plist */,
+				CF86347E27646FD1005AFB04 /* SomeTestTearDownCase.swift */,
 			);
 			path = UTtestTests;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFB3BB8C26E1DD7100EB2B1A /* UTtestTests.swift in Sources */,
+				CF86347F27646FD1005AFB04 /* SomeTestTearDownCase.swift in Sources */,
 				CFB3BBA626E1DF9E00EB2B1A /* Temperature.swift in Sources */,
 				CF863459275720B7005AFB04 /* SomeTestSetUpCase.swift in Sources */,
 			);
